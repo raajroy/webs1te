@@ -4,10 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Flexpressions</title>
-  <style>h1{font-family:monospace;font-weight:bold;}video{border-radius:20px;}</style>
+  <style>
+    body{background:#222;}
+    h1{font-family:monospace;font-weight:bold;}
+    video{border-radius:20px;}
+    span{animation:huro 1s linear infinite;}
+    @keyframes huro{50%{filter:hue-rotate(360deg);}}
+  </style>
 </head>
 <body>
-  <h1>Flexpressions</h1>
+  <h1></h1>
   <video src="https://github.com/raajroy/webs1te/blob/main/Flex240pressions.mp4?raw=true" controls loop></video>
+  <script>
+    let h1=document.querySelector("h1");
+    let s="Flexpressions";
+    for(let i=0;i<s.length;++i) {
+      let e=document.createElement("span");
+      e.innerText=s[i];
+      e.style.color=`hsl(${(360/s.length)*i},100%,50%)`;
+      h1.appendChild(e);
+    }
+  </script>
 </body>
 </html>
